@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyBook</string>
+    <string name="hello">Hello!</string>
+    <string name="welText">Welcome to MyBook</string>
+    <string name="des">Description</string>
+    <string name="title">Title</string>
+    <string name="btnsave">Save</string>
+</resources>
