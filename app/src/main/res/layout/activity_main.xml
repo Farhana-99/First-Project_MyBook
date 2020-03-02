@@ -32,7 +32,7 @@
         android:layout_height="70dp"
         android:layout_below="@+id/weltext"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="150dp"
         android:text="Access Library"
         android:textSize="30dp"
     />
@@ -41,10 +41,20 @@
         android:id="@+id/note"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="35dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/library"
         android:text="See Notes"
+        android:textSize="30dp"
+        />
+    <Button
+        android:id="@+id/whatsNew"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/note"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="Whats New"
         android:textSize="30dp"
         />
 </RelativeLayout>

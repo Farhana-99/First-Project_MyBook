@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button button;
     private Button button1;
+    private Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.library);
         button1 = (Button) findViewById(R.id.note);
+        button2 = (Button) findViewById(R.id.whatsNew);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
                 opennotes();
             }
         });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openwhatsnew();
+            }
+        });
     }
 
     public void openlibrary(){
@@ -40,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
     public void opennotes(){
         Intent intent = new Intent(this, Notes.class);
         startActivity(intent);
+    }
+
+    public void openwhatsnew(){
+        Intent intent = new Intent(this, WhatsNew.class);
     }
 }
 
