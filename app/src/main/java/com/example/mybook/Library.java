@@ -29,7 +29,8 @@ public class Library extends AppCompatActivity {
 
         // Request Read & Write External storage
         Dexter.withActivity(this)
-                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE) // PERSONAL NOTE--> WRITE_EXTERNAL_STORAGE ta thik hoar kotha.
+                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .withPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) // PERSONAL NOTE--> WRITE_EXTERNAL_STORAGE ta thik hoar kotha.
                 .withListener(new BaseMultiplePermissionsListener(){
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report) {

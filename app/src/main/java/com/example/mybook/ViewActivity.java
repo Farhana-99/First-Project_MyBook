@@ -78,7 +78,6 @@ public class ViewActivity extends AppCompatActivity {
                         }
                     })
                             .enableAnnotationRendering(true)
-                            .invalidPageColor(Color.WHITE)
                             .load();
 
                 }
@@ -126,7 +125,6 @@ public class ViewActivity extends AppCompatActivity {
                         }
                     })
                             .enableAnnotationRendering(true)
-                            .invalidPageColor(Color.WHITE)
                             .load();
 
 
