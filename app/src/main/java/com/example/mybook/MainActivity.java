@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.library);
         button1 = (Button) findViewById(R.id.note);
-        button2 = (Button) findViewById(R.id.whatsNew);
+        button2 = (Button) findViewById(R.id.bdebook);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openwhatsnew();
+                openbde();
             }
         });
     }
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openwhatsnew(){
-        Intent intent = new Intent(this, WhatsNew.class);
+    public void openbde(){
+        Intent intent = new Intent(this, BDeBook.class);
     }
 }
 

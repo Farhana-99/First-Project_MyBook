@@ -6,4 +6,7 @@
     <string name="title">Title</string>
     <string name="btnsave">Save</string>
     <string name="addNote">Add Note</string>
+    <string name="access_library">Access Library</string>
+    <string name="see_notes">See Notes</string>
+    <string name="bdebook">BD-e-Book</string>
 </resources>

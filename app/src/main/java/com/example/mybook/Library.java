@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.Manifest.permission;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.net.Uri;
@@ -29,8 +30,7 @@ public class Library extends AppCompatActivity {
 
         // Request Read & Write External storage
         Dexter.withActivity(this)
-                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                .withPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) // PERSONAL NOTE--> WRITE_EXTERNAL_STORAGE ta thik hoar kotha.
+                .withPermission(permission.READ_EXTERNAL_STORAGE, permission.WRITE_EXTERNAL_STORAGE) // PERSONAL NOTE--> WRITE_EXTERNAL_STORAGE ta thik hoar kotha.
                 .withListener(new BaseMultiplePermissionsListener(){
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
