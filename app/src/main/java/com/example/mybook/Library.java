@@ -14,7 +14,12 @@ import android.widget.Button;
 
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.BaseMultiplePermissionsListener;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+
+import java.util.List;
 
 public class Library extends AppCompatActivity {
 
@@ -30,14 +35,30 @@ public class Library extends AppCompatActivity {
 
         // Request Read & Write External storage
         Dexter.withActivity(this)
-                .withPermission(permission.READ_EXTERNAL_STORAGE, permission.WRITE_EXTERNAL_STORAGE) // PERSONAL NOTE--> WRITE_EXTERNAL_STORAGE ta thik hoar kotha.
-                .withListener(new BaseMultiplePermissionsListener(){
+                .withPermissions(
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .withListener(new MultiplePermissionsListener() {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
-                        super.onPermissionsChecked(report);
-                    }
-                }).check();
+                        // check if all permissions are granted
+                        if (report.areAllPermissionsGranted()) {
+                            // do you work now
+                        }
 
+                        // check for permanent denial of any permission
+                        if (report.isAnyPermissionPermanentlyDenied()) {
+                            // permission is denied permenantly, navigate user to app settings
+                        }
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                        token.continuePermissionRequest();
+                    }
+                })
+                .onSameThread()
+                .check();
 
         btn_open_asset = (Button)findViewById(R.id.btn_open_asset);
         btn_open_storage = (Button)findViewById(R.id.btn_open_storage);

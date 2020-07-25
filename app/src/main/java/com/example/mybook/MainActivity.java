@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void openbde(){
         Intent intent = new Intent(this, BDeBook.class);
+
+        startActivity(intent);
     }
 }
 
