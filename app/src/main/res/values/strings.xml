@@ -9,4 +9,8 @@
     <string name="access_library">Access Library</string>
     <string name="see_notes">See Notes</string>
     <string name="bdebook">BD-e-Book</string>
+    <string name="btprev">prev</string>
+    <string name="btnext">next</string>
+    <string name="btzoomin">+</string>
+    <string name="btzoomout">-</string>
 </resources>

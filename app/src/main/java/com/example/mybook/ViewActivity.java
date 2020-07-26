@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
@@ -19,7 +20,8 @@ import com.github.barteksc.pdfviewer.listener.OnTapListener;
 
 public class ViewActivity extends AppCompatActivity {
 
-    PDFView pdfView;
+    public PDFView pdfView;
+    public float zoomValue=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +75,8 @@ public class ViewActivity extends AppCompatActivity {
                                 }
                             }).onRender(new OnRenderListener() {
                         @Override
-                        public void onInitiallyRendered(int nbPages) { // PERSONAL NOTE--> (int nbPages, float pageWidth, floatHeight) hobe
-                            pdfView.fitToWidth(0); // PERSONAL NOTE--> prob ace. () er moddhe kicu bosbe na. na bosale .invalidPageColor ta thik ase
+                        public void onInitiallyRendered(int nbPages) {
+                            pdfView.fitToWidth(0);
                         }
                     })
                             .enableAnnotationRendering(true)
@@ -120,8 +122,8 @@ public class ViewActivity extends AppCompatActivity {
                                 }
                             }).onRender(new OnRenderListener() {
                         @Override
-                        public void onInitiallyRendered(int nbPages) { // PERSONAL NOTE--> (int nbPages, float pageWidth, floatHeight) hobe
-                            pdfView.fitToWidth(0); // PERSONAL NOTE--> prob ace. () er moddhe kicu bosbe na. na bosale .invalidPageColor ta thik ase
+                        public void onInitiallyRendered(int nbPages) {
+                            pdfView.fitToWidth(0);
                         }
                     })
                             .enableAnnotationRendering(true)
@@ -132,6 +134,28 @@ public class ViewActivity extends AppCompatActivity {
             }
         }
 
+        }
+
+        public void nextPage (View view){
+        pdfView.jumpTo(pdfView.getCurrentPage()+1, true);
+        }
+
+        public void prevPage (View view){
+        pdfView.jumpTo(pdfView.getCurrentPage()-1,true);
+        }
+
+        public void zoonIn (View view){
+        ++zoomValue;
+        pdfView.zoomTo(zoomValue);
+        pdfView.loadPages();
+        }
+
+        public void zoomOut (View view){
+         if (zoomValue!=1){
+             --zoomValue;
+             pdfView.zoomTo(zoomValue);
+             pdfView.loadPages();
+         }
         }
     }
 

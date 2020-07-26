@@ -15,9 +15,9 @@
             android:id="@+id/hello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="100dp"
             android:text="@string/hello"
-            android:textSize="47sp"
+            android:textSize="30sp"
             android:layout_centerHorizontal="true"
             />
         <TextView
@@ -25,42 +25,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/welText"
-            android:textSize="42sp"
+            android:textSize="30sp"
             android:layout_below="@+id/hello"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
             android:layout_centerHorizontal="true"
             />
 
         <Button
             android:id="@+id/library"
-            android:layout_width="300dp"
-            android:layout_height="70dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/weltext"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="18dp"
             android:text="@string/access_library"
-            android:textSize="30dp"
+            android:textSize="20dp"
             />
 
         <Button
             android:id="@+id/note"
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="35dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/library"
             android:text="@string/see_notes"
-            android:textSize="30dp"
+            android:textSize="20dp"
             />
         <Button
             android:id="@+id/bdebook"
-            android:layout_width="300dp"
-            android:layout_height="70dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/note"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="15dp"
             android:text="@string/bdebook"
-            android:textSize="30dp"
+            android:textSize="20dp"
             />
 
     </RelativeLayout>
