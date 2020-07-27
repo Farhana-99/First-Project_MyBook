@@ -27,6 +27,7 @@ public class Library extends AppCompatActivity {
 
     private Button btn_open_asset;
     private Button btn_open_storage;
+    private Button btn_open_internet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,7 @@ public class Library extends AppCompatActivity {
 
                         // check for permanent denial of any permission
                         if (report.isAnyPermissionPermanentlyDenied()) {
-                            // permission is denied permenantly, navigate user to app settings
+                            // permission is denied permanently, navigate user to app settings
                         }
                     }
 
@@ -62,6 +63,7 @@ public class Library extends AppCompatActivity {
 
         btn_open_asset = (Button)findViewById(R.id.btn_open_asset);
         btn_open_storage = (Button)findViewById(R.id.btn_open_storage);
+        btn_open_internet = (Button)findViewById(R.id.btn_open_internet);
 
         btn_open_asset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +83,16 @@ public class Library extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(browsePDF, "Select PDF"),PICK_PDF_CODE);
             }
         });
+
+        btn_open_internet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Library.this,ViewActivity.class);
+                intent.putExtra("ViewType","internet");
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
