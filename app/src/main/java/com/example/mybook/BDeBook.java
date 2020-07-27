@@ -58,11 +58,12 @@ public class BDeBook extends AppCompatActivity {
         alertDialog.setTitle("Attention");
         alertDialog.setMessage("You are not connected to the Internet");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                new DialogInterface.OnClickListener() {
+                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         android.os.Process.killProcess(android.os.Process.myPid());
                         System.exit(1);
+
                     }
                 }
 
